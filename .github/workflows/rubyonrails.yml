@@ -38,6 +38,6 @@ jobs:
           bundler-cache: true
       # Add or replace any other lints here
       - name: Security audit dependencies
-        run: bundle-audit
+        run: bundle exec bundle-audit
       - name: Lint Ruby files
         run: bundle exec rake rubocop
