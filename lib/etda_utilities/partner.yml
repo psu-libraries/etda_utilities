@@ -1,0 +1,45 @@
+graduate:
+  slug: eTD
+  name: Graduate School
+  email:
+    address: gradthesis@psu.edu
+    list: 'ul-etda-graduate-admin@pennstateoffice365.onmicrosoft.com'
+  program:
+    label: Graduate Program
+  committee:
+    label: Committee Member
+    list:
+      label: Committee Members
+
+honors:
+  slug: eHT
+  name: Schreyer Honors College
+  email:
+    address: SHCAcademics@psu.edu
+    list: 'ul-etda-honors-admin@pennstateoffice365.onmicrosoft.com'
+  program:
+    label: Area of Honors
+  committee:
+    label: Thesis Supervisor
+    list:
+      label: Thesis Supervisors
+
+milsch:
+  slug: MSPT
+  name: Millennium Scholars Program
+  email:
+    address: millennium@psu.edu
+    list: 'ul-etda-milsch-admin@pennstateoffice365.onmicrosoft.com'
+  program:
+    label: Millennium Scholars Program Name
+  committee:
+    label: Thesis Supervisor
+    list:
+      label: Thesis Supervisor
+
+sset:
+  slug: SSETT
+  name: School of Science, Engineering, and Technology
+  email:
+    address: sset@psu.edu
+    list: 'ul-etda-sset-admin@pennstateoffice365.onmicrosoft.com'
