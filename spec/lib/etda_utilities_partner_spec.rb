@@ -35,6 +35,9 @@ RSpec.describe EtdaUtilities::Partner, type: :model do
     it 'returns partner committee list label' do
       expect(current_partner.committee_list_label).to eq("Committee Members")
     end
+    it 'returns partner header title' do
+      expect(current_partner.header_title).to eq("Electronic Theses and Dissertations for Graduate School")
+    end
   end
 
   context "when ENV['PARTNER'] is honors" do
@@ -71,6 +74,9 @@ RSpec.describe EtdaUtilities::Partner, type: :model do
     it 'returns partner committee list label' do
       expect(current_partner.committee_list_label).to eq("Thesis Supervisors")
     end
+    it 'returns partner header title' do
+      expect(current_partner.header_title).to eq("Electronic Theses for Schreyer Honors College")
+    end
   end
 
   context "when ENV['PARTNER'] is milsch" do
@@ -99,13 +105,16 @@ RSpec.describe EtdaUtilities::Partner, type: :model do
       expect(current_partner.slug).to eq("MSPT")
     end
     it 'returns partner label' do
-      expect(current_partner.program_label).to eq("Millennium Scholars Program Name")
+      expect(current_partner.program_label).to eq("Millennium Scholars Program")
     end
     it 'returns partner committee label' do
       expect(current_partner.committee_label).to eq("Thesis Supervisor")
     end
     it 'returns partner committee list label' do
       expect(current_partner.committee_list_label).to eq("Thesis Supervisor")
+    end
+    it 'returns partner header title' do
+      expect(current_partner.header_title).to eq("Electronic Theses for Millennium Scholars Program")
     end
   end
 
@@ -133,6 +142,18 @@ RSpec.describe EtdaUtilities::Partner, type: :model do
     end
     it 'returns partner slug' do
       expect(current_partner.slug).to eq("SSETT")
+    end
+    it 'returns program label' do
+      expect(current_partner.program_label).to eq("Program")
+    end
+    it 'returns partner committee label' do
+      expect(current_partner.committee_label).to eq("Committee Member")
+    end
+    it 'returns partner committee list label' do
+      expect(current_partner.committee_list_label).to eq("Committee Members")
+    end
+    it 'returns partner header title' do
+      expect(current_partner.header_title).to eq("Final Papers for the School of Science, Engineering, and Technology")
     end
   end
 

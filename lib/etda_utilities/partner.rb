@@ -46,6 +46,10 @@ module EtdaUtilities
       attributes['committee']['list']['label']
     end
 
+    def header_title
+      attributes['header_title']
+    end
+
     def graduate?
       id == 'graduate'
     end
