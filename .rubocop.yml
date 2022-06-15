@@ -12,6 +12,7 @@ Metrics/BlockLength:
   Exclude:
    - spec/lib/etda_utilities_etda_file_paths_spec.rb
    - spec/lib/etda_utilities_partner_spec.rb
+   - spec/lib/etda_utilities_hosts_spec.rb
 
 Metrics/MethodLength:
   Enabled: false
