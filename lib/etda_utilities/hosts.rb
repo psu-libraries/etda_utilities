@@ -2,6 +2,28 @@
 
 module EtdaUtilities
   class Hosts
+    class << self
+      def workflow_url(partner = nil, host = nil)
+        if ENV['WORKFLOW_HOST']
+          "https://#{ENV['WORKFLOW_HOST']}"
+        else
+          raise ArgumentError, "_partner and _host are required arguments" if partner.nil? || host.nil?
+
+          "https://" + new.workflow_submit_host(partner, host)
+        end
+      end
+
+      def explore_url(partner = nil, host = nil)
+        if ENV['EXPLORE_HOST']
+          "https://#{ENV['EXPLORE_HOST']}"
+        else
+          raise ArgumentError, "_partner and _host are required arguments" if partner.nil? || host.nil?
+
+          "https://" + new.explore_host(partner, host)
+        end
+      end
+    end
+
     def workflow_submit_host(partner, environment = 'prod')
       host_builder(partner, environment, true)
     end
