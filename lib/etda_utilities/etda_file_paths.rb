@@ -15,29 +15,29 @@ module EtdaUtilities
     end
 
     def workflow_upload_final_files_path
-      workflow_base_path + 'final_submission_files/'
+      "#{workflow_base_path}final_submission_files/"
     end
 
     def workflow_upload_format_review_path
-      workflow_base_path + 'format_review_files/'
+      "#{workflow_base_path}format_review_files/"
     end
 
     def workflow_restricted
-      workflow_base_path + RESTRICTED_DIR + '/'
+      "#{workflow_base_path}#{RESTRICTED_DIR}/"
     end
 
     def explore_open
-      explore_base_path + OPEN_DIR + '/'
+      "#{explore_base_path}#{OPEN_DIR}/"
     end
 
     def explore_psu_only
-      explore_base_path + RESTRICTED_INSTITUTION_DIR + '/'
+      "#{explore_base_path}#{RESTRICTED_INSTITUTION_DIR}/"
     end
 
     def detailed_file_path(file_id)
       str1 = format("%02d", ((file_id.to_i || 0) % 100))
       str2 = file_id.to_s
-      str1 + '/' + str2 + '/'
+      "#{str1}/#{str2}/"
     end
 
     def explore_download_file_path(file_id, access_level, filename)

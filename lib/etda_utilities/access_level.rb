@@ -6,6 +6,7 @@ module EtdaUtilities
 
   class AccessLevel
     attr_accessor :attributes
+
     # attr_accessor :current_access_level
     # *** IMPORTANT NOTE ***
     # The order of the keys in this array matter and they should go from least restrictive to most restrictive

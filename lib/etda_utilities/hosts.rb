@@ -9,7 +9,7 @@ module EtdaUtilities
         else
           raise ArgumentError, "_partner and _host are required arguments" if partner.nil? || host.nil?
 
-          "https://" + new.workflow_submit_host(partner, host)
+          "https://#{new.workflow_submit_host(partner, host)}"
         end
       end
 
@@ -19,7 +19,7 @@ module EtdaUtilities
         else
           raise ArgumentError, "_partner and _host are required arguments" if partner.nil? || host.nil?
 
-          "https://" + new.explore_host(partner, host)
+          "https://#{new.explore_host(partner, host)}"
         end
       end
     end
@@ -56,16 +56,8 @@ module EtdaUtilities
       end
 
       def partner_host(partner)
-        case partner
-        when 'graduate'
-          "etda"
-        when 'honors'
-          "honors"
-        when 'milsch'
-          "millennium-scholars"
-        when 'sset'
-          "sset"
-        end
+        host_hash = { 'graduate' => "etda", 'honors' => "honors", 'milsch' => "millennium-scholars", 'sset' => "sset" }
+        host_hash[partner]
       end
   end
 end
