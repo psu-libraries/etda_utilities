@@ -160,3 +160,7 @@ Style/BlockDelimiters:
 
 Naming/FileName:
   Exclude:
+
+Style/OptionalBooleanParameter:
+  Exclude:
+  - 'lib/etda_utilities/hosts.rb'

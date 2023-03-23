@@ -1,6 +1,6 @@
 # EtdaUtilities
 
-[![Build Status](https://travis-ci.com/psu-stewardship/etda_utilities.svg?token=aQpbqAxsm8KshbvyB24o&branch=master)](https://travis-ci.com/psu-stewardship/etda_utilities)
+![CI](https://github.com/psu-libraries/etda_utilities/actions/workflows/ruby-ci.yml/badge.svg)
 
 Common methods used by etda_workflow and etda_explore
 
