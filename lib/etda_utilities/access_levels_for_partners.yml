@@ -2,7 +2,7 @@ graduate:
   access_level:
     open_access: Open Access
     open_access_attr:
-      description_html: 'Allows free worldwide access to the entire work beginning immediately after degree conferral. Appropriate for the majority of dissertation submissions in immediately fulfilling the requirement for making the work available to the public. After the conferral of the degree, abstracts for all doctoral dissertations and master's theses, whether Open Access, Restricted (Penn State) or Restricted, become accessible worldwide.'
+      description_html: Allows free worldwide access to the entire work beginning immediately after degree conferral. Appropriate for the majority of dissertation submissions in immediately fulfilling the requirement for making the work available to the public. After the conferral of the degree, abstracts for all doctoral dissertations and master's theses, whether Open Access, Restricted (Penn State) or Restricted, become accessible worldwide.
       scope: released_for_publication
     restricted_to_institution: 'Restricted (Penn State Only)'
     restricted_to_institution_attr:
