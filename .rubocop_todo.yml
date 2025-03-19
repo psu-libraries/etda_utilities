@@ -78,7 +78,7 @@ RSpec/ContextWording:
 
 # Offense count: 3
 # Configuration parameters: CustomTransform, IgnoreMethods.
-RSpec/FilePath:
+RSpec/SpecFilePathFormat:
   Exclude:
     - 'spec/lib/etda_utilities_access_level_spec.rb'
     - 'spec/lib/etda_utilities_etda_file_paths_spec.rb'
