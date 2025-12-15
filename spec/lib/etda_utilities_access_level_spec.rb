@@ -4,7 +4,7 @@ RSpec.describe EtdaUtilities::AccessLevel, type: :model do
   describe 'AccessLevel' do
     describe '#ACCESS_LEVEL_KEYS' do
       it 'constant containing all access levels' do
-        expect(described_class::ACCESS_LEVEL_KEYS).to contain_exactly('open_access', 'restricted_to_institution', 'restricted_liberal_arts','restricted', '')
+        expect(described_class::ACCESS_LEVEL_KEYS).to contain_exactly('open_access', 'restricted_to_institution', 'restricted_liberal_arts', 'restricted', '')
       end
     end
 
