@@ -47,7 +47,7 @@ module EtdaUtilities
 
       return explore_open + detailed_file_path(file_id) + filename if access_level == 'open_access'
 
-      return explore_psu_only + detailed_file_path(file_id) + filename if access_level == 'restricted_to_institution'
+      return explore_psu_only + detailed_file_path(file_id) + filename if (access_level == 'restricted_to_institution' || access_level == 'restricted_liberal_arts')
 
       nil
     end

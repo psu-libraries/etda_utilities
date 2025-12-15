@@ -11,7 +11,7 @@ module EtdaUtilities
     # *** IMPORTANT NOTE ***
     # The order of the keys in this array matter and they should go from least restrictive to most restrictive
     # This is used in the comparison operation (<=>) below
-    ACCESS_LEVEL_KEYS = ['open_access', 'restricted_to_institution', 'restricted', ''].freeze
+    ACCESS_LEVEL_KEYS = ['open_access', 'restricted_to_institution', 'restricted_liberal_arts', 'restricted', ''].freeze
 
     # create instances of each type that can be used
     # OPEN_ACCESS, RESTRICTED, and RESTRICTED_TO_INSTITUTION (graduate only)

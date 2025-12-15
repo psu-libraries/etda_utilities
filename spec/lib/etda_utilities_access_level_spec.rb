@@ -4,7 +4,7 @@ RSpec.describe EtdaUtilities::AccessLevel, type: :model do
   describe 'AccessLevel' do
     describe '#ACCESS_LEVEL_KEYS' do
       it 'constant containing all access levels' do
-        expect(described_class::ACCESS_LEVEL_KEYS).to contain_exactly('open_access', 'restricted_to_institution', 'restricted', '')
+        expect(described_class::ACCESS_LEVEL_KEYS).to contain_exactly('open_access', 'restricted_to_institution', 'restricted_liberal_arts','restricted', '')
       end
     end
 
@@ -19,6 +19,7 @@ RSpec.describe EtdaUtilities::AccessLevel, type: :model do
         yml_level = described_class.partner_access_levels['access_level']
         expect(yml_level['open_access']).to include('Open Access')
         expect(yml_level['restricted_to_institution']).to include('Restricted (Penn State Only)')
+        expect(yml_level['restricted_liberal_arts']).to include('Restricted (Liberal Arts Only)')
         expect(yml_level['restricted']).to include('Restricted')
       end
     end
@@ -45,6 +46,9 @@ RSpec.describe EtdaUtilities::AccessLevel, type: :model do
         restricted_to_institution = described_class.new('restricted_to_institution')
         expect(restricted_to_institution.attributes).to eq('Restricted (Penn State Only)')
         expect(restricted_to_institution.current_access_level).to eq('restricted_to_institution')
+        restricted_liberal_arts = described_class.new('restricted_liberal_arts')
+        expect(restricted_liberal_arts.attributes).to eq('Restricted (Liberal Arts Only)')
+        expect(restricted_liberal_arts.current_access_level).to eq('restricted_liberal_arts')
         restricted = described_class.new('restricted')
         expect(restricted.attributes).to eq('Restricted')
         expect(restricted.current_access_level).to eq('restricted')
