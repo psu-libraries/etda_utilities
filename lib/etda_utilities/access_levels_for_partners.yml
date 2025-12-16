@@ -11,7 +11,7 @@ graduate:
     restricted_liberal_arts: 'Restricted (Liberal Arts Only)'
     restricted_liberal_arts_attr:
       description_html: 'Immediately after the conferral of the degree, the abstract becomes accessible worldwide. All other parts of the document are restricted to Penn State only for an embargo period of five (5) years for dissertations from the College of the Liberal Arts. No extensions will be granted beyond five (5) years.'
-      scope: final_restricted_institution
+      scope: final_restricted_liberal_arts
     restricted: 'Restricted'
     restricted_attr:
       description_html: Restricts the entire work for the purpose of filing a patent.  At the end of the two-year period, the status will automatically change to Open Access. Selection of this option requires that an invention disclosure (ID) be filed with the Office of Technology Management (OTM) prior to submission of the final thesis/dissertation, and confirmed by OTM. After the conferral of the degree, abstracts for all doctoral dissertations and master's theses, whether Open Access, Restricted (Penn State) or Restricted, become accessible worldwide.
