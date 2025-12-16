@@ -4,6 +4,7 @@ module EtdaUtilities
   class EtdaFilePaths
     RESTRICTED_DIR = 'restricted'
     RESTRICTED_INSTITUTION_DIR = 'restricted_institution'
+    RESTRICTED_LIBERAL_ARTS_DIR = 'restricted_liberal_arts'
     OPEN_DIR = 'open_access'
 
     def workflow_base_path
@@ -34,6 +35,10 @@ module EtdaUtilities
       "#{explore_base_path}#{RESTRICTED_INSTITUTION_DIR}/"
     end
 
+    def explore_liberal_arts_only
+      "#{explore_base_path}#{RESTRICTED_LIBERAL_ARTS_DIR}/"
+    end
+
     def detailed_file_path(file_id)
       str1 = format("%02d", ((file_id.to_i || 0) % 100))
       str2 = file_id.to_s
@@ -47,7 +52,9 @@ module EtdaUtilities
 
       return explore_open + detailed_file_path(file_id) + filename if access_level == 'open_access'
 
-      return explore_psu_only + detailed_file_path(file_id) + filename if ['restricted_to_institution', 'restricted_liberal_arts'].include?(access_level)
+      return explore_psu_only + detailed_file_path(file_id) + filename if access_level == 'restricted_to_institution'
+
+      return explore_liberal_arts_only + detailed_file_path(file_id) + filename if access_level == 'restricted_liberal_arts'
 
       nil
     end
