@@ -74,7 +74,7 @@ RSpec.describe EtdaUtilities::EtdaFilePaths, type: :model do
 
       it 'returns a path for restricted_liberal_arts records' do
         access_level = 'restricted_liberal_arts'
-        expect(subject.explore_download_file_path(file_id, access_level, filename)).to eq('tmp/restricted_liberal_arts/45/345/myfile.pdf')
+        expect(subject.explore_download_file_path(file_id, access_level, filename)).to eq('tmp/restricted_institution/45/345/myfile.pdf')
       end
 
       it 'returns a path for open_access records' do
