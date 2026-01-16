@@ -48,14 +48,14 @@ module EtdaUtilities
       remediated ? "remediated/#{str1}/#{str2}/" : "#{str1}/#{str2}/"
     end
 
-    def explore_download_file_path(file_id, access_level, filename)
+    def explore_download_file_path(file_id, access_level, filename, remediated: false)
       return nil if file_id.nil? || access_level.empty?
 
       return nil if access_level == 'restricted'
 
-      return explore_open + detailed_file_path(file_id) + filename if access_level == 'open_access'
+      return explore_open + detailed_file_path(file_id, remediated: remediated) + filename if access_level == 'open_access'
 
-      return explore_psu_only + detailed_file_path(file_id) + filename if ['restricted_to_institution', 'restricted_liberal_arts'].include?(access_level)
+      return explore_psu_only + detailed_file_path(file_id, remediated: remediated) + filename if ['restricted_to_institution', 'restricted_liberal_arts'].include?(access_level)
 
       nil
     end

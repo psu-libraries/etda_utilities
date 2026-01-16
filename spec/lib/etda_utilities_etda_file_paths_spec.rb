@@ -65,8 +65,9 @@ RSpec.describe EtdaUtilities::EtdaFilePaths, type: :model do
     end
 
     describe '#explore_download_file_path' do
-      file_id = 345
-      filename = 'myfile.pdf'
+      let(:file_id) { 345 }
+      let(:filename) { 'myfile.pdf' }
+
       it 'is nil for restricted files' do
         access_level = 'restricted'
         expect(subject.explore_download_file_path(file_id, access_level, filename)).to be_nil
@@ -101,6 +102,13 @@ RSpec.describe EtdaUtilities::EtdaFilePaths, type: :model do
         access_level = 'open_access'
         file_id = nil
         expect(subject.explore_download_file_path(file_id, access_level, filename)).to be_nil
+      end
+
+      it 'includes remediated in the path when remediated is true' do
+        access_level = 'open_access'
+        expect(subject.explore_download_file_path(file_id, access_level, filename, remediated: true)).to eq('tmp/open_access/remediated/45/345/myfile.pdf')
+        access_level = 'restricted_to_institution'
+        expect(subject.explore_download_file_path(file_id, access_level, filename, remediated: true)).to eq('tmp/restricted_institution/remediated/45/345/myfile.pdf')
       end
     end
   end
