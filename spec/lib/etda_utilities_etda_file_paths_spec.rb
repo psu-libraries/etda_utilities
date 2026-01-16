@@ -57,6 +57,11 @@ RSpec.describe EtdaUtilities::EtdaFilePaths, type: :model do
         id = "345"
         expect(subject.detailed_file_path(id)).to eq('45/345/')
       end
+
+      it 'includes remediated in the path when remediated is true' do
+        id = 345
+        expect(subject.detailed_file_path(id, remediated: true)).to eq('remediated/45/345/')
+      end
     end
 
     describe '#explore_download_file_path' do
