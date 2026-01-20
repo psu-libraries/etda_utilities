@@ -39,20 +39,23 @@ module EtdaUtilities
       "#{explore_base_path}#{RESTRICTED_LIBERAL_ARTS_DIR}/"
     end
 
-    def detailed_file_path(file_id)
+    # If remediated is true, the path will include the "remediated" subdirectory
+    # This will differentiate remediated files from original files while
+    # maintaining a similar directory structure to final_submission_files.
+    def detailed_file_path(file_id, remediated: false)
       str1 = format("%02d", ((file_id.to_i || 0) % 100))
       str2 = file_id.to_s
-      "#{str1}/#{str2}/"
+      remediated ? "remediated/#{str1}/#{str2}/" : "#{str1}/#{str2}/"
     end
 
-    def explore_download_file_path(file_id, access_level, filename)
+    def explore_download_file_path(file_id, access_level, filename, remediated: false)
       return nil if file_id.nil? || access_level.empty?
 
       return nil if access_level == 'restricted'
 
-      return explore_open + detailed_file_path(file_id) + filename if access_level == 'open_access'
+      return explore_open + detailed_file_path(file_id, remediated: remediated) + filename if access_level == 'open_access'
 
-      return explore_psu_only + detailed_file_path(file_id) + filename if ['restricted_to_institution', 'restricted_liberal_arts'].include?(access_level)
+      return explore_psu_only + detailed_file_path(file_id, remediated: remediated) + filename if ['restricted_to_institution', 'restricted_liberal_arts'].include?(access_level)
 
       nil
     end
