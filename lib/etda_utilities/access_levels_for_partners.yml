@@ -24,7 +24,7 @@ honors:
   access_level:
     open_access: Open Access
     open_access_attr:
-      description_html: Allows for open access to the body of the thesis. Note:"Withheld" status must be arranged by contacting the Honors College Records Department.
+      description_html: Your electronic thesis is available to anyone who wishes to access it on the web. Open access distribution makes the work more widely available. This is the default.
       scope: released_for_publication
     restricted_to_institution: 'Restricted (Penn State Only)'
     restricted_to_institution_attr:
